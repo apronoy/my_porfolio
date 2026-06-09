@@ -45,7 +45,7 @@ class _DesktopNavbar extends StatelessWidget {
     return Row(
       children: [
         Text(
-          "Pronoy Sarkar",
+          "Portfolio",
           style: GoogleFonts.montserrat(
             color: Colors.white,
             fontSize: 28,

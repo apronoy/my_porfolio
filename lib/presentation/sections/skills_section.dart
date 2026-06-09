@@ -11,6 +11,7 @@ class SkillsSection extends StatelessWidget {
     final bool isMobile = Responsive.isMobile(context);
 
     final skills = [
+      "Dart",
       "Flutter",
       "Firebase",
       "REST API",
@@ -34,7 +35,7 @@ class SkillsSection extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "My Skills",
+            "My Technical Skills",
             textAlign: TextAlign.center,
             style: AppTextStyles.sectionTitle.copyWith(
               fontSize: isMobile ? 32 : 42,
@@ -56,9 +57,7 @@ class SkillsSection extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.card,
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: AppColors.accent.withOpacity(.2),
-                  ),
+                  border: Border.all(color: AppColors.accent.withOpacity(.2)),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.accent.withOpacity(.05),
@@ -83,16 +82,12 @@ class SkillsSection extends StatelessWidget {
 
           Container(
             width: double.infinity,
-            constraints: const BoxConstraints(
-              maxWidth: 1000,
-            ),
+            constraints: const BoxConstraints(maxWidth: 1000),
             padding: const EdgeInsets.all(30),
             decoration: BoxDecoration(
               color: AppColors.card,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: AppColors.accent.withOpacity(.2),
-              ),
+              border: Border.all(color: AppColors.accent.withOpacity(.2)),
             ),
             child: Column(
               children: [
@@ -109,7 +104,7 @@ class SkillsSection extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 Text(
-                  "I specialize in building cross-platform mobile applications using Flutter and modern backend services. My focus is creating scalable, maintainable, and production-ready applications with clean architecture and excellent user experience.",
+                  "I build scalable mobile applications using Flutter and Dart, leveraging Firebase for authentication and backend services, and REST APIs for seamless data integration. Based on project requirements, I implement Stripe payments, RevenueCat subscriptions and in-app purchases, Google Maps location services, and Google Mobile Ads monetization. I also manage the complete deployment process, publishing production-ready applications to both the Google Play Store and Apple App Store.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white70,

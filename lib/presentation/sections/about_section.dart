@@ -8,8 +8,7 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isMobile =
-        Responsive.isMobile(context);
+    final bool isMobile = Responsive.isMobile(context);
 
     return Container(
       width: double.infinity,
@@ -26,8 +25,7 @@ class AboutSection extends StatelessWidget {
           Text(
             "About Me",
             textAlign: TextAlign.center,
-            style:
-                AppTextStyles.sectionTitle.copyWith(
+            style: AppTextStyles.sectionTitle.copyWith(
               fontSize: isMobile ? 32 : 42,
             ),
           ),
@@ -35,16 +33,12 @@ class AboutSection extends StatelessWidget {
           const SizedBox(height: 30),
 
           ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: isMobile ? 500 : 900,
-            ),
+            constraints: BoxConstraints(maxWidth: isMobile ? 500 : 900),
 
             child: Text(
-              "I'm a Computer Science student and Flutter Developer with experience building modern mobile applications using Flutter, Firebase, REST APIs, Stripe, RevenueCat and Google Maps. I enjoy creating scalable, clean and user-friendly applications.",
+              "I build scalable, production-ready mobile applications that deliver seamless user experiences and business value. My expertise spans Flutter development, Firebase services, REST API integration, Stripe payment processing, RevenueCat subscription management, Google Maps and location-based services, and Google Mobile Ads monetization. I have practical experience managing the complete app lifecycle, from architecture and development to deployment, publishing, and maintenance on both the Apple App Store and Google Play Store.",
               textAlign: TextAlign.center,
-              style: AppTextStyles.body.copyWith(
-                fontSize: isMobile ? 16 : 18,
-              ),
+              style: AppTextStyles.body.copyWith(fontSize: isMobile ? 16 : 18),
             ),
           ),
 
@@ -53,36 +47,26 @@ class AboutSection extends StatelessWidget {
           isMobile
               ? const Column(
                   children: [
-                    _InfoCard(
-                      title: "9+",
-                      subtitle:
-                          "Months Experience",
-                    ),
+                    _InfoCard(title: "1.5+", subtitle: "Months Experience"),
 
                     SizedBox(height: 20),
 
                     _InfoCard(
                       title: "10+",
-                      subtitle:
-                          "Projects Built",
+                      subtitle: "Projects Built and Deployed",
                     ),
 
                     SizedBox(height: 20),
 
-                    _InfoCard(
-                      title: "8+",
-                      subtitle:
-                          "Technologies",
-                    ),
+                    _InfoCard(title: "12+", subtitle: "Technologies"),
                   ],
                 )
               : const Row(
                   children: [
                     Expanded(
                       child: _InfoCard(
-                        title: "9+",
-                        subtitle:
-                            "Months Experience",
+                        title: "1.5+",
+                        subtitle: "Months Experience",
                       ),
                     ),
 
@@ -91,8 +75,7 @@ class AboutSection extends StatelessWidget {
                     Expanded(
                       child: _InfoCard(
                         title: "10+",
-                        subtitle:
-                            "Projects Built",
+                        subtitle: "Projects Built and Deployed",
                       ),
                     ),
 
@@ -100,9 +83,8 @@ class AboutSection extends StatelessWidget {
 
                     Expanded(
                       child: _InfoCard(
-                        title: "8+",
-                        subtitle:
-                            "Technologies",
+                        title: "12+",
+                        subtitle: "Technologies Knowledge",
                       ),
                     ),
                   ],
@@ -117,15 +99,11 @@ class _InfoCard extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const _InfoCard({
-    required this.title,
-    required this.subtitle,
-  });
+  const _InfoCard({required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
-    final bool isMobile =
-        Responsive.isMobile(context);
+    final bool isMobile = Responsive.isMobile(context);
 
     return Container(
       width: double.infinity,
@@ -135,18 +113,13 @@ class _InfoCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.card,
 
-        borderRadius:
-            BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20),
 
-        border: Border.all(
-          color:
-              AppColors.accent.withOpacity(.2),
-        ),
+        border: Border.all(color: AppColors.accent.withOpacity(.2)),
       ),
 
       child: Column(
-        mainAxisAlignment:
-            MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             title,

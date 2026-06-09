@@ -4,6 +4,7 @@ import 'package:portfolio/core/constants/responsive.dart';
 import 'package:portfolio/core/theme/app_color.dart';
 import 'package:portfolio/core/theme/app_text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/foundation.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -11,7 +12,11 @@ class ContactSection extends StatelessWidget {
   Future<void> _launchUrl(String url) async {
     final Uri uri = Uri.parse(url);
 
-    if (await canLaunchUrl(uri)) {
+    if (!await canLaunchUrl(uri)) return;
+
+    if (kIsWeb) {
+      await launchUrl(uri, webOnlyWindowName: '_blank');
+    } else {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     }
   }
@@ -30,7 +35,7 @@ class ContactSection extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Let's Connect",
+            "Let's Work Together ",
             textAlign: TextAlign.center,
             style: AppTextStyles.sectionTitle,
           ),
@@ -38,7 +43,7 @@ class ContactSection extends StatelessWidget {
           const SizedBox(height: 20),
 
           Text(
-            "Interested in working together, hiring a Flutter developer, or discussing a project? Feel free to reach out.",
+            " Interested in working together ? Feel free to reach out.",
             textAlign: TextAlign.center,
             style: AppTextStyles.body,
           ),
@@ -71,29 +76,11 @@ class ContactSection extends StatelessWidget {
                   ),
           ),
 
-          const SizedBox(height: 80),
+          const SizedBox(height: 20),
 
           Divider(color: Colors.white.withOpacity(.15)),
 
-          const SizedBox(height: 30),
-
-          Text(
-            "Pronoy Sarkar",
-            style: TextStyle(
-              color: AppColors.accent,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-
-          const SizedBox(height: 10),
-
-          const Text(
-            "Flutter Developer",
-            style: TextStyle(color: Colors.white70),
-          ),
-
-          const SizedBox(height: 15),
+          const SizedBox(height: 20),
 
           const Text(
             "© 2026 Pronoy Sarkar. All Rights Reserved.",
@@ -120,6 +107,8 @@ class ContactSection extends StatelessWidget {
 
         const SizedBox(height: 30),
 
+        _infoTile(Icons.phone_outlined, "Phone", "+880 1846 624175"),
+        const SizedBox(height: 20),
         _infoTile(Icons.email_outlined, "Email", "pronoysarkar1020@gmail.com"),
 
         const SizedBox(height: 20),
@@ -199,13 +188,13 @@ class ContactSection extends StatelessWidget {
         SocialButton(
           icon: FontAwesomeIcons.whatsapp,
           label: "WhatsApp",
-          onTap: () => _launchUrl("https://wa.me/8801XXXXXXXXX"),
+          onTap: () => _launchUrl("https://wa.me/01846624175"),
         ),
 
         SocialButton(
           icon: FontAwesomeIcons.envelope,
           label: "Email",
-          onTap: () => _launchUrl("mailto:yourmail@gmail.com"),
+          onTap: () => _launchUrl("pronoysarkar1020@gmail.com"),
         ),
       ],
     );
